@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+telemetry_config.json
+telemetry_queue.jsonl
+telemetry_queue.jsonl.tmp

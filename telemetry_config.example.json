@@ -1,0 +1,8 @@
+{
+  "device_id": "raspberry-pi-01",
+  "endpoint": "https://example.com/api/v1/telemetry",
+  "api_key": "replace-with-a-secret-device-key",
+  "interval_seconds": 60,
+  "queue_path": "telemetry_queue.jsonl",
+  "timeout_seconds": 10
+}

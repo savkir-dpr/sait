@@ -1,0 +1,40 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Мониторинг Raspberry Pi</title>
+  <link rel="stylesheet" href="{% static 'monitoring/dashboard.css' %}?v=average-bar-v2">
+</head>
+<body data-dashboard-version="average-bar-v2">
+  <main class="container">
+    <header>
+      <div><p class="eyebrow">СИСТЕМА МОНИТОРИНГА</p><h1>Raspberry Pi 5</h1></div>
+      <div id="status" class="status offline">Нет данных</div>
+    </header>
+
+    <section class="cards" aria-label="Текущие показания">
+      <article class="card"><span>Давление</span><strong id="pressure">—</strong><small>бар</small></article>
+      <article class="card"><span>Дверца 1</span><strong id="door-1" class="door unknown">—</strong><small>состояние концевика</small></article>
+      <article class="card"><span>Дверца 2</span><strong id="door-2" class="door unknown">—</strong><small>состояние концевика</small></article>
+      <article class="card"><span>Последнее измерение</span><strong id="updated" class="date">—</strong><small id="device">Устройство не подключено</small></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Средняя температура</h2><span>обновление каждые 10 секунд</span></div>
+      <div id="temperatures" class="temperatures"></div>
+      <canvas id="chart" width="1000" height="300" aria-label="График средней температуры"></canvas>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Журнал событий</h2></div>
+      <div id="events" class="events"><p class="muted">Событий пока нет</p></div>
+    </section>
+  </main>
+  <script src="{% static 'monitoring/dashboard.js' %}?v=average-bar-v2"></script>
+</body>
+</html>
